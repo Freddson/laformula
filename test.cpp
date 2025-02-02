@@ -6,7 +6,7 @@
 using json = nlohmann::json;
 
 int main() {
-    std::string a, b, t;
+    std::string a, b;
     std::getline(std::cin, a);
     b = "https://api.openf1.org/v1/sessions?country_name=" + a + "&session_type=Practice&year=2024";
     cpr::Response r = cpr::Get(cpr::Url{b});
