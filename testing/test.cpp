@@ -8,7 +8,7 @@ using json = nlohmann::json;
 
 int main() {
     std::string a, b;
-    int sk1, sk2, sk3;
+    int sk[3];
     std::getline(std::cin, a);
     b = "https://api.openf1.org/v1/sessions?country_name=" + a + "&session_type=Practice&year=2024";
     cpr::Response r = cpr::Get(cpr::Url{b});
@@ -29,10 +29,10 @@ int main() {
     //If the correct country is provided, pull the first session_key and save all three (by adding 1 for each lasting session_key)
     
     for (auto it = j.begin(); it != j.end(); ++it) {
-        if(it.key() == "session_key") sk1 = j["session_key"].get<int>(); sk2 = sk1 + 1; sk3 = sk2 + 1;
+        if(it.key() == "session_key") sk[0] = j["session_key"].get<int>(); sk[1] = sk[0] + 1; sk[2] = sk[1] + 1;
     }
 
-    std::cout << sk1 << " - " << sk2 << " - " << sk3 << "\n";
+    std::cout << sk[0] << " - " << sk[1] << " - " << sk[2] << "\n";
 
     return 0;
 }
