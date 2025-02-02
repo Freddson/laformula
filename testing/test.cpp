@@ -2,11 +2,13 @@
 #include <iostream>
 #include <vector>
 #include "cpr/cpr.h"
+#include <algorithm>
 #include "nlohmann/json.hpp"
 using json = nlohmann::json;
 
 int main() {
     std::string a, b;
+    int sk1, sk2, sk3;
     std::getline(std::cin, a);
     b = "https://api.openf1.org/v1/sessions?country_name=" + a + "&session_type=Practice&year=2024";
     cpr::Response r = cpr::Get(cpr::Url{b});
@@ -24,7 +26,13 @@ int main() {
     text.erase(text.begin());
     json j = json::parse(text);
     std::cout << j.dump(4) << std::endl;
-    //If the correct country is provided, pull the last session_key and save all three (by deducting 1 from each session_key)
+    //If the correct country is provided, pull the first session_key and save all three (by adding 1 for each lasting session_key)
     
+    for (auto it = j.begin(); it != j.end(); ++it) {
+        if(it.key() == "session_key") sk1 = j["session_key"].get<int>(); sk2 = sk1 + 1; sk3 = sk2 + 1;
+    }
+
+    std::cout << sk1 << " - " << sk2 << " - " << sk3 << "\n";
+
     return 0;
 }
