@@ -21,7 +21,10 @@ int main() {
         text.erase(0, pos + 2);
         pos = text.find("},");
     }
-
+    //FIXME: Provide check for countries with more than two races! (Italy (Monza, Imola), USA (LA, COTA, Miami); Make user specify race in such case)
+    if(splitresponse.size() > 3) {
+        cout << "Input country with more than one race!\nSpecify the name of the race (ex. 'Imola', 'Miami').\n"
+    }
     text = splitresponse[0] + "}";
     text.erase(text.begin());
     json j = json::parse(text);
