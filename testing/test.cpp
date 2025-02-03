@@ -23,7 +23,7 @@ int main() {
     }
     //FIXME: Provide check for countries with more than two races! (Italy (Monza, Imola), USA (LA, COTA, Miami); Make user specify race in such case)
     if(splitresponse.size() > 3) {
-        std::cout << "Input country with more than one race!\nSpecify the name of the race (ex. 'Imola', 'Miami').\n";
+        std::cout << "Input is country with more than one race in race calendar!\nSpecify the name of the race (ex. 'Imola', 'Miami').\n";
     }
     text = splitresponse[0] + "}";
     text.erase(text.begin());
