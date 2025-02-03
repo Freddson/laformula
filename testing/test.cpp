@@ -1,8 +1,8 @@
 #include <string>
 #include <iostream>
 #include <vector>
-#include "cpr/cpr.h"
 #include <algorithm>
+#include "cpr/cpr.h"
 #include "nlohmann/json.hpp"
 using json = nlohmann::json;
 
