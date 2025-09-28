@@ -9,7 +9,7 @@ using json = nlohmann::json;
 
 int ReturnSessionKey(std::string a) {
     bool sprint;
-    int sk[3];
+    int sk;
     int sprint_sk;
     //no switch case possibility :(
     if(a == "Miami") { a = "United%20States&location=Miami"; sprint = true;}
@@ -64,8 +64,8 @@ int ReturnSessionKey(std::string a) {
     //Bypass pointer requirement for array return, only return sk[0]
     
     for (auto it = j.begin(); it != j.end(); ++it) {
-        if(it.key() == "session_key") sk[0] = j["session_key"].get<int>();
+        if(it.key() == "session_key") sk = j["session_key"].get<int>();
     }
 
-    return sk[0];
+    return sk;
 }
