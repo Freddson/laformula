@@ -12,6 +12,4 @@ double StartReactionTime::reactiontime() {
     reactiontime = reactiontime / 100 + 5;
     return reactiontime;
     }
-
-    
 }
