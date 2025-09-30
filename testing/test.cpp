@@ -6,7 +6,7 @@ using namespace std;
 
 
 int main() {
-    std::string a, b;
+    std::string a;
     int sk[3];
     int sprint_sk;
 
@@ -14,4 +14,6 @@ int main() {
     vals result = ReturnSessionKey(a);
     //^ this works, second step from roadmap to come!
     sk[0] = result.sk;
+    sk[1] = ++sk[0];
+    sk[2] = ++sk[1];
 }
