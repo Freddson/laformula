@@ -1,7 +1,7 @@
-#include "laptime.h"
+#include "Laptime.h"
 #include <random>
 
-namespace laptime {
+namespace Laptime {
 double StartReactionTime::reactiontime() {
     //first-lap start reaction time between 0.05s and 0.4s
     std::random_device rd; // obtain a random number from hardware

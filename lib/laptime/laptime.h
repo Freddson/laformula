@@ -1,6 +1,6 @@
 #pragma once
 
-namespace laptime {
+namespace Laptime {
     class StartReactionTime {
         public:
             static double reactiontime();
