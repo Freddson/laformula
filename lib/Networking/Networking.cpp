@@ -76,7 +76,7 @@ vals ReturnSessionKey(std::string a) {
     }
 
     forrace.sk = sk;
-    //forrace.sprint = sprint;
+    forrace.sprint = sprint;
 
     return forrace;
 }
