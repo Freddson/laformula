@@ -9,7 +9,7 @@ using json = nlohmann::json;
 
 vals ReturnSessionKey(std::string a) {
     vals forrace;
-    bool sprint;
+    bool sprint = false;
     int sk;
     int sprint_sk;
     //no switch case possibility :(
@@ -76,7 +76,7 @@ vals ReturnSessionKey(std::string a) {
     }
 
     forrace.sk = sk;
-    forrace.sprint = sprint;
+    //forrace.sprint = sprint;
 
     return forrace;
 }
