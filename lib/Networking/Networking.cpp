@@ -4,7 +4,7 @@
 #include <vector>
 #include <algorithm>
 #include "cpr/cpr.h"
-#include "nlohmann/json.hpp"
+#include <nlohmann/json.hpp>
 using json = nlohmann::json;
 
 vals ReturnSessionKey(std::string a) {
@@ -17,7 +17,7 @@ vals ReturnSessionKey(std::string a) {
 
     else if(a == "Austin") { a = "United%20States&location=Austin"; sprint = true;}
 
-    else if(a == "Las Vegas") a = "United%20States&location=Las%20Vegas"; 
+    else if(a == "Las Vegas") a = "United%20States&location=Las%20Vegas";
 
     else if(a == "Imola") a = "Italy&location=Imola";
 
@@ -70,7 +70,7 @@ vals ReturnSessionKey(std::string a) {
     json j = json::parse(text);
     //If the correct country is provided, pull the first session_key and DON'T save all three (by adding 1 for each session_key)
     //Bypass pointer requirement for array return, only return sk[0]
-    
+
     for (auto it = j.begin(); it != j.end(); ++it) {
         if(it.key() == "session_key") sk = j["session_key"].get<int>();
     }
